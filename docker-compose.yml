@@ -1,0 +1,29 @@
+services:
+  users-service:
+    build: ./users-service
+    entrypoint: npm run start
+    volumes:
+      - ./users-service:/app
+    ports:
+      - "8002:3002"
+  billing-service:
+    build: ./billing-service
+    entrypoint: npm run start
+    volumes:
+      - ./billing-service:/app
+    ports:
+      - "8000:3000"
+  inventory-service:
+    build: ./inventory-service
+    entrypoint: npm run start
+    volumes:
+      - ./inventory-service:/app
+    ports:
+      - "8008:3008"
+  shipping-service:
+    build: ./shipping-service
+    entrypoint: npm run start
+    volumes:
+      - ./shipping-service:/app
+    ports:
+      - "8007:3007"
